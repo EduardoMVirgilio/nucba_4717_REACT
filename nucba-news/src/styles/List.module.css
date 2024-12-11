@@ -1,0 +1,63 @@
+#news {
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  & header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 2rem;
+    & h2 {
+      text-transform: uppercase;
+      background-image: var(--gradient-hot);
+      color: transparent;
+      background-clip: text;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1rem;
+      &::after {
+        content: "";
+        width: 100%;
+        background-image: var(--gradient-hot);
+        height: 0.25rem;
+      }
+    }
+    & a {
+      height: 4rem;
+      aspect-ratio: 1/1;
+      background-image: var(--gradient-hot);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: scale(0.75);
+      transition: all 150ms ease-in-out;
+      & svg {
+        stroke: var(--light);
+      }
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+  & ul {
+    scrollbar-width: none;
+    max-height: calc(6rem * 4);
+    height: calc(6rem * 4);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    scroll-padding-top: 1rem;
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,126 @@
+#mainHeader {
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--dark);
+  box-shadow: 0 -0.25rem 0.75rem 0 var(--cold);
+  & h1 {
+    background: var(--gradient-cold);
+    background-clip: text;
+    color: transparent;
+  }
+}
+#navbar {
+  display: flex;
+  gap: 1rem;
+  & button {
+    padding: 0.25rem 2rem;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    color: var(--light);
+    font-weight: 800;
+    position: relative;
+    font-size: 1rem;
+    &::before {
+      content: "";
+      background-image: var(--gradient-cold);
+      width: 100%;
+      position: absolute;
+      bottom: 0rem;
+      left: 0;
+      height: 0.25rem;
+      border-radius: calc(0.25rem / 2);
+      transform: scaleX(0);
+      transform-origin: bottom right;
+      transition: transform 150ms ease-in-out;
+      @media (max-width: 768px) {
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+      }
+    }
+    &:hover::before {
+      transform-origin: bottom left;
+      transform: scaleX(1);
+    }
+    &.active::before {
+      transform-origin: bottom left;
+      transform: scaleX(1);
+    }
+    @media (max-width: 768px) {
+      background-image: var(--gradient-cold);
+      color: transparent;
+      background-clip: text;
+      padding: 0 2rem 0;
+      font-size: 1.5rem;
+      &:hover {
+        background: none;
+        color: var(--light);
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: calc(4rem + 2rem);
+    align-items: start;
+    transform: translateX(-100%);
+    transition: all 300ms ease-in-out;
+    &.active {
+      transform: translateX(0);
+    }
+  }
+}
+
+#headerActions {
+  display: none;
+  gap: 1rem;
+  & button {
+    height: 3rem;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    background-color: transparent;
+    outline: none;
+    color: var(--light);
+    font-weight: 800;
+    position: relative;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      position: absolute;
+      background-image: var(--gradient-cold);
+      transform: scale(1);
+      transform-origin: center center;
+      z-index: -1;
+      transition: all 150ms ease-in-out;
+    }
+    & svg {
+      aspect-ratio: 1/1;
+      height: 2rem;
+    }
+    &:hover::before {
+      transform: scale(0);
+    }
+    &.active::before {
+      transform: scaleX(1);
+    }
+  }
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}

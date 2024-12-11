@@ -1,0 +1,61 @@
+.post {
+  background-color: var(--light);
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  scroll-snap-align: start;
+  position: relative;
+  & details {
+    & summary {
+      background-image: var(--gradient-cold);
+      color: transparent;
+      background-clip: text;
+      font-size: 1.25rem;
+      font-weight: 800;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      &::after {
+        border-radius: 50%;
+        content: "";
+        width: 2rem;
+        aspect-ratio: 1/1;
+        background-image: var(--gradient-cold);
+        mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWNoZXZyb24tcmlnaHQiPjxwYXRoIGQ9Im05IDE4IDYtNi02LTYiLz48L3N2Zz4=");
+        mask-repeat: no-repeat;
+        mask-position: center;
+        transform: rotate(0deg);
+        transition: all 300ms ease-in-out;
+      }
+    }
+    &[open] summary::after {
+      transform: rotate(90deg);
+    }
+  }
+  & form {
+    display: flex;
+    gap: 1rem;
+    & button {
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      &.edit {
+        background-color: var(--hot-light);
+      }
+      &.remove {
+        background-color: var(--hot);
+        & svg {
+          stroke: var(--light);
+        }
+      }
+    }
+  }
+}

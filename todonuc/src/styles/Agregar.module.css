@@ -1,0 +1,26 @@
+#add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  & input {
+    flex: 1;
+    padding: 0.25rem 0.75rem;
+    border: none;
+    border-bottom: 0.05rem solid indigo;
+    outline: none;
+    &::placeholder {
+      opacity: 1;
+      color: purple;
+    }
+  }
+  & button {
+    padding: 0.25rem 0.75rem;
+    background-color: purple;
+    color: snow;
+    text-transform: uppercase;
+    font-weight: 800;
+    cursor: pointer;
+  }
+}

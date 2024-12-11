@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --dark: #121212;
+  --light: #fcfcfc;
+  --cold: #2f80ed;
+  --cold-light: #2d9ee0;
+  --gradient-cold: linear-gradient(to right, var(--cold), var(--cold-light));
+  --gradient-cold-alt: linear-gradient(to left, var(--cold), var(--cold-light));
+  --hot: #fd1d1d;
+  --hot-light: #fcb045;
+  --gradient-hot: linear-gradient(to right, var(--hot), var(--hot-light));
+  --gradient-hot-alt: linear-gradient(to left, var(--hot), var(--hot-light));
+  --font-lato: "Lato", sans-serif;
+  --font-monts: "Montserrat", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  font-family: var(--font-monts);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5vh;
+  scroll-snap-type: y mandatory;
+  background-color: var(--dark);
+}
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-color: var(--dark);
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+}

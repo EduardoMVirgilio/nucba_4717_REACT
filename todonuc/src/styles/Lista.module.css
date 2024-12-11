@@ -1,0 +1,15 @@
+#list {
+  width: 100%;
+  max-width: 768px;
+  display: flex;
+  flex-direction: column;
+  height: calc(5rem * 4);
+  max-height: calc(5rem * 4);
+  overflow-y: auto;
+  scrollbar-width: 0;
+  gap: 1rem;
+  padding: 1rem;
+  & ::-webkit-scrollbar {
+    display: none;
+  }
+}

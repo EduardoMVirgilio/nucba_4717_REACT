@@ -1,0 +1,64 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  background-color: rgb(90, 205, 192);
+  color: black;
+  font-weight: 800;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  & input {
+    background-color: snow;
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    &:disabled {
+      opacity: 1;
+      color: black;
+      background-color: transparent;
+      font-weight: 800;
+    }
+  }
+  & form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    & button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+      aspect-ratio: 1 / 1;
+      background-color: crimson;
+      border-radius: 50%;
+      & svg {
+        stroke: snow;
+      }
+      &:nth-child(2) {
+        background-color: gold;
+        & svg {
+          stroke: black;
+        }
+      }
+      &:last-child {
+        &.incomplete {
+          background-color: teal;
+          & svg {
+            stroke: snow;
+          }
+        }
+        &:not(.incomplete) {
+          background-color: snow;
+          & svg {
+            stroke: crimson;
+          }
+        }
+      }
+    }
+  }
+}
+
+.incomplete {
+  background-color: orange;
+}
