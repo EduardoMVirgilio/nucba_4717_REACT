@@ -1,0 +1,15 @@
+#footer{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+}
+#links{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}

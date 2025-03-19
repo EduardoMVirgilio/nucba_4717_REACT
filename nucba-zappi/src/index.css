@@ -7,6 +7,7 @@
   --bg-header: #18191a;
   --btn-gradient: linear-gradient(83deg, #ffa100, #fb103d);
   --btn-gradient-secondary: linear-gradient(140deg, #3b3022, #3b2329);
+  --white: #fafafa;
 }
 * {
   margin: 0;
@@ -32,9 +33,9 @@ a {
   color: white;
 }
 
-a:visited {
+/* a:visited {
   color: white;
-}
+} */
 
 li {
   list-style: none;

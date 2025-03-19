@@ -1,0 +1,60 @@
+#login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    min-height: 75dvh;
+    width: 100%;
+}
+
+#title{
+    font-size: 2rem;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 480px;
+}
+
+.field{
+    width: 100%;
+    padding: .75rem 1.25rem;
+    border-radius: .25rem;
+    border: none;
+    outline: none;
+    background-color: var(--gray-bg);
+    caret-color: var(--white);
+    color: var(--white);
+    border: .2rem solid transparent;
+    transition: all 300ms ease-in-out;
+}
+
+.error{
+    border-color: var(--magenta);
+}
+
+.field::placeholder{
+    opacity: .8;
+    color: var(--white);
+}
+
+.link{
+    color: var(--orange);
+}
+
+.submit{
+    background: var(--btn-gradient);
+    color: var(--white);
+    padding: .75rem 1.25rem;
+    border-radius: .25rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+}

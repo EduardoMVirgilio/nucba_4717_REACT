@@ -5,12 +5,13 @@ import Header from './Header/Header'
 import Hero from './Hero/Hero'
 import Categories from './Categories/Categories'
 import Products from './Products/Products'
+import { useCategory } from './context/CategoryContext'
 const App = () => {
+  const { category } = useCategory()
   return (<>
-    <Header />
     <Hero />
     <Categories categorias={categorias} />
-    <Products productos={productos.productos} />
+    <Products productos={productos.productos} categoria={category} />
   </>)
 }
 
