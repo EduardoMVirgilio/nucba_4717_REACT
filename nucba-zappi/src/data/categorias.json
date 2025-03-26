@@ -7,24 +7,24 @@
     "img": "https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648466/coding/NucbaZappi/Categorias/hamburguesa_faykp7.png",
     "title": "Hamburguesas"
   },
-  "PapasFritas": {
+  "Napapuki": {
     "img": "https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648466/coding/NucbaZappi/Categorias/papas-fritas_uw3tat.png",
-    "title": "Papas Fritas"
+    "title": "Napapuki"
   },
   "PizzasALaPiedra": {
     "img": "https://res.cloudinary.com/dcatzxqqf/image/upload/v1656656873/coding/NucbaZappi/Categorias/LaPiedra_g5lhgf.png",
     "title": "Pizzas a la Piedra"
   },
-  "Tortas": {
+  "Wraps": {
     "img": "https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648466/coding/NucbaZappi/Categorias/burritos_osec1e.png",
-    "title": "Tortas"
+    "title": "Wraps"
   },
-  "ComidaMexicana": {
+  "MexicanFood": {
     "img": "https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648466/coding/NucbaZappi/Categorias/tacos_hdr7i2.png",
-    "title": "Comida Mexicana"
+    "title": "Mexican Food"
   },
-  "Batidos": {
+  "Batidukis": {
     "img": "https://res.cloudinary.com/dcatzxqqf/image/upload/v1656648466/coding/NucbaZappi/Categorias/batidos_njcyfi.png",
-    "title": "Batidos"
+    "title": "Batidukis"
   }
 }

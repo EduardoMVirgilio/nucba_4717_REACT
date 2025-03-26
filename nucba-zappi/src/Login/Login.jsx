@@ -12,3 +12,7 @@ const Login = () => {
     </article>)
 }
 export default Login
+
+// https://nucbaz-api.vercel.app/auth/login
+
+// https://nucbaz-api.vercel.app/orders

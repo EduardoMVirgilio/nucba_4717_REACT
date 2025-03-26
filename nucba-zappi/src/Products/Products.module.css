@@ -72,3 +72,27 @@
     transition: all 300ms ease-in-out;
   }
 }
+
+
+#paginate{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btnPage{
+  padding: .75rem 1.25rem;
+  cursor: pointer;
+  border-radius: 1.25rem;
+  background: var(--btn-gradient);
+  color: var(--white);
+  font-weight: bold;
+}
+.btnPage:disabled{
+  opacity: .8;
+  color: transparent;
+  background-clip: text;
+  cursor: not-allowed;
+  box-shadow: 0 0 .25rem 0 rgb(102, 102, 102);
+}

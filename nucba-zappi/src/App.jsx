@@ -7,11 +7,11 @@ import Categories from './Categories/Categories'
 import Products from './Products/Products'
 import { useCategory } from './context/CategoryContext'
 const App = () => {
-  const { category } = useCategory()
+  // const { category } = useCategory()
   return (<>
     <Hero />
     <Categories categorias={categorias} />
-    <Products productos={productos.productos} categoria={category} />
+    <Products productos={productos.productos} />
   </>)
 }
 
