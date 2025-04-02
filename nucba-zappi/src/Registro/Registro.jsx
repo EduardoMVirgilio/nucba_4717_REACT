@@ -47,7 +47,9 @@ const Register = () => {
         <input
           type="text"
           className={`${RegisterStyle.field} ${
-            formState.errors && formState.errors.name ? RegisterStyle.error : ""
+            formState.errors && formState.errors.nombre
+              ? RegisterStyle.error
+              : ""
           }`}
           placeholder="Nombre"
           {...register("nombre", {
@@ -99,7 +101,13 @@ const Register = () => {
         {formState.errors && formState.errors.root && (
           <small>{formState.errors.root.message}</small>
         )}
-        <button className={RegisterStyle.submit}>Ingresar</button>
+        <button
+          type="submit"
+          disabled={formState.isSubmitting}
+          className={RegisterStyle.submit}
+        >
+          {formState.isSubmitting ? "Cargando..." : "Guardar"}
+        </button>
       </form>
     </article>
   );

@@ -1,6 +1,9 @@
 import headerStyle from "./Header.module.css";
 import { NavLink } from "react-router";
+import { useSelector } from "react-redux";
+import Cart from "../Cart/Cart.jsx";
 const Header = () => {
+  const { user } = useSelector((state) => state.user);
   return (
     <header id={headerStyle.mainHeader}>
       <picture id={headerStyle.headerBrand}>
@@ -18,17 +21,40 @@ const Header = () => {
           </svg>
           Home
         </NavLink>
-        <NavLink
-          to={"/login"}
-          className={({ isActive }) =>
-            `${headerStyle.link} ${isActive ? headerStyle.active : ""}`
-          }
-        >
-          Inicia sesión
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
-          </svg>
-        </NavLink>
+        <Cart />
+        {!user && (
+          <NavLink
+            to={"/login"}
+            className={({ isActive }) =>
+              `${headerStyle.link} ${isActive ? headerStyle.active : ""}`
+            }
+          >
+            Inicia sesión
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
+            </svg>
+          </NavLink>
+        )}
+        {user && (
+          <>
+            <NavLink
+              to={"/orders"}
+              className={({ isActive }) =>
+                `${headerStyle.logout} ${isActive ? headerStyle.active : ""}`
+              }
+            >
+              <span>{user.usuario.nombre.toUpperCase().charAt(0)}</span>
+            </NavLink>
+            <NavLink
+              to={"/logout"}
+              className={({ isActive }) =>
+                `${headerStyle.logout} ${isActive ? headerStyle.active : ""}`
+              }
+            >
+              <span>Cerrar sesión</span>
+            </NavLink>
+          </>
+        )}
       </nav>
 
       <form id={headerStyle.headerActions}>
