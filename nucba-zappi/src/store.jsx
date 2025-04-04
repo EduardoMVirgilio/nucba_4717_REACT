@@ -37,42 +37,32 @@ const CartSlice = createSlice({
   initialState: { cart: [] },
   reducers: {
     addToCart: (state, action) => {
-      const exists = state.cart.find(
-        ({ producto }) => producto.id == action.payload.id
-      );
+      const exists = state.cart.find(({ id }) => id == action.payload.id);
       if (exists) {
         exists.quantity++;
         return;
       }
-      state.cart.push({ producto: action.payload, quantity: 1 });
+      state.cart.push({ ...action.payload, quantity: 1 });
     },
     addQuantity: (state, action) => {
-      const exists = state.cart.find(
-        ({ producto }) => producto.id == action.payload.id
-      );
+      const exists = state.cart.find(({ id }) => id == action.payload.id);
       if (exists) {
         exists.quantity++;
         return;
       }
     },
     removeQuantity: (state, action) => {
-      const exists = state.cart.find(
-        ({ producto }) => producto.id == action.payload.id
-      );
+      const exists = state.cart.find(({ id }) => id == action.payload.id);
       if (exists) {
         exists.quantity--;
         if (exists.quantity <= 0) {
-          state.cart = state.cart.filter(
-            ({ producto }) => producto.id != action.payload.id
-          );
+          state.cart = state.cart.filter(({ id }) => id != action.payload.id);
         }
         return;
       }
     },
     removeFromCart: (state, action) => {
-      state.cart = state.cart.filter(
-        ({ producto }) => producto.id != action.payload
-      );
+      state.cart = state.cart.filter(({ id }) => id != action.payload.id);
     },
     clearCart: (state) => {
       state.cart = [];

@@ -26,6 +26,10 @@ body {
   color: white;
   -webkit-tap-highlight-color: transparent;
   overflow-x: hidden;
+  &.active {
+    pointer-events: none;
+    user-select: none;
+  }
   &.active::after {
     content: "";
     position: fixed;
@@ -34,6 +38,8 @@ body {
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(0.2rem);
+    pointer-events: none;
+    user-select: none;
     z-index: 8;
   }
 }

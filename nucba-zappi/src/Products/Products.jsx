@@ -1,7 +1,9 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styleProducts from "./Products.module.css";
 import { useState } from "react";
+import { addToCart } from "../store";
 const Products = ({ productos = [] }) => {
+  const dispatch = useDispatch();
   const [offset, setOffset] = useState(3);
   const categoria = useSelector((state) => state.category.category);
   let catalogo = categoria
@@ -24,7 +26,12 @@ const Products = ({ productos = [] }) => {
                   <p>{producto.desc}</p>
                   <form>
                     <span>${producto.price}</span>
-                    <button>Agregar</button>
+                    <button
+                      type="button"
+                      onClick={() => dispatch(addToCart(producto))}
+                    >
+                      Agregar
+                    </button>
                   </form>
                 </li>
               ))}
@@ -36,7 +43,12 @@ const Products = ({ productos = [] }) => {
                 <p>{producto.desc}</p>
                 <form>
                   <span>${producto.price}</span>
-                  <button>Agregar</button>
+                  <button
+                    type="button"
+                    onClick={() => dispatch(addToCart(producto))}
+                  >
+                    Agregar
+                  </button>
                 </form>
               </li>
             ))}
