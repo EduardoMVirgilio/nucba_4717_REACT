@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import CartStyle from "./Cart.module.css";
-import { Minus, Plus, ShoppingCart, Trash, X } from "lucide-react";
+import { ShoppingCart, Trash, X } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addQuantity,
-  removeQuantity,
-  removeFromCart,
-  clearCart,
-} from "../store";
-import { Link } from "react-router";
+import { clearCart } from "../store";
+import CartItem from './CartItem';
+import { Link, useLocation } from "react-router";
 const Cart = () => {
+  const { pathname } = useLocation()
   const { user } = useSelector((state) => state.user);
   const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -23,6 +20,10 @@ const Cart = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  useEffect(() => {
+    setOpened(false);
+    document.body.classList.remove("active");
+  }, [pathname])
   useEffect(() => {
     if (isMobile) {
       setOpened(false);
@@ -62,54 +63,7 @@ const Cart = () => {
         )}
         {cart.length > 0 && (
           <ul className={CartStyle.list}>
-            {cart.map((item) => (
-              <li key={item.id} className={CartStyle.item}>
-                <picture>
-                  <img src={item.img} alt="" />
-                </picture>
-                <dl>
-                  <dt>{item.title}</dt>
-                  <dd>{item.desc}</dd>
-                  <dd>
-                    {new Intl.NumberFormat("es-AR", {
-                      style: "currency",
-                      currency: "ARS",
-                    }).format(item.price)}
-                  </dd>
-                </dl>
-                <form
-                  onSubmit={(e) => e.preventDefault()}
-                  className={CartStyle.itemForm}
-                >
-                  {item.quantity == 1 && (
-                    <button
-                      type="button"
-                      onClick={() => dispatch(removeFromCart(item))}
-                      className={CartStyle.itemButtonRemove}
-                    >
-                      <Trash />
-                    </button>
-                  )}
-                  {item.quantity > 1 && (
-                    <button
-                      type="button"
-                      onClick={() => dispatch(removeQuantity(item))}
-                      className={CartStyle.itemButtonRemove}
-                    >
-                      <Minus />
-                    </button>
-                  )}
-                  <output>{item.quantity}</output>
-                  <button
-                    type="button"
-                    onClick={() => dispatch(addQuantity(item))}
-                    className={CartStyle.itemButtonAdd}
-                  >
-                    <Plus />
-                  </button>
-                </form>
-              </li>
-            ))}
+            {cart.map((item) => <CartItem item={item} />)}
           </ul>
         )}
 

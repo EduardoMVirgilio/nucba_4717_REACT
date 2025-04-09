@@ -23,6 +23,7 @@
   min-height: 100vh;
   background-color: var(--gray-bg);
   border-radius: 0 0 0 1rem;
+  transform-origin: top left ;
   transform: translateX(100%);
   z-index: 9;
   transition: all 300ms ease-in-out;
@@ -233,6 +234,50 @@
   }
 }
 
+
+.subtotal{
+  display: flex;
+    flex-flow: row wrap;
+    gap: 0.25rem;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    & span {
+      color: snow;
+      font-weight: 800;
+    }
+}
+.shipping{
+  display: flex;
+    flex-flow: row wrap;
+    gap: 0.25rem;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    padding: 0 0 0.25rem;
+    border-bottom: 0.2rem solid rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.25rem;
+    & span {
+      color: snow;
+      font-weight: 800;
+    }
+}
+.total{
+  display: flex;
+    flex-flow: row wrap;
+    gap: 0.25rem;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    & span {
+      color: snow;
+      font-weight: 800;
+      color: transparent;
+      background-image: var(--btn-gradient);
+      background-clip: text;
+    }
+}
+
 .checkout {
   color: snow;
   background-image: var(--btn-gradient);
@@ -248,5 +293,62 @@
   &:hover {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+
+#pageCheckout{
+  min-height: 80dvh;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: flex-start;
+  padding: 2rem 0 0;
+}
+
+#shippingForm{
+  display: flex;
+  flex-flow: row wrap;
+  gap: .25rem;
+  width: 100%;
+  max-width: 480px;
+  & h2{
+    width: 100%;
+  }
+  & fieldset{
+    width: calc(100% / 2 - 1rem);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    min-height: 5.5rem;
+    & input{
+      padding: .5rem 1.25rem;
+      background-color: var(--gray-bg);
+      border-radius: .25rem;
+      border: .1rem solid transparent;
+      outline: none;
+        color: snow;
+      &.error{
+        border-color: crimson;
+      }
+    }
+  }
+  & button{
+    padding: .75rem 1.5rem;
+    border-radius: .75rem;
+    color: snow;
+    text-transform: uppercase;
+    background-image: var(--btn-gradient);
+    transform: scale(.9);
+    transition: all 300ms ease-in-out;
+    &:hover{
+      transform: scale(1);
+    }
+    &:disabled{
+      opacity: .8;
+    }
   }
 }
