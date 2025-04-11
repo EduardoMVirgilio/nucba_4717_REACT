@@ -8,6 +8,8 @@ import Login from "./Login/Login.jsx";
 import Register from "./Registro/Registro.jsx";
 import Logout from "./Logout.jsx";
 import Checkout from "./Cart/Checkout.jsx";
+import Orders from "./Orders/Orders.jsx";
+import OrderDetail from "./Orders/OrderDetail.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -18,6 +20,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="registro" element={<Register />} />
         <Route path="logout" element={<Logout />} />
         <Route path="checkout" element={<Checkout />} />
+        <Route path="orders" element={<Orders />} />
+        <Route path="orders/:id" element={<OrderDetail />} />
       </Route>
       <Route path="*" element={<Page404 />} />
     </Routes>
